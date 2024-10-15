@@ -1,0 +1,278 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #101010; /* Темный фон для AMOLED */
+    color: #e0e0e0; /* Светлый текст для контраста */
+}
+
+header {
+    background-color: #1f1f1f; /* Темный фон заголовка */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Легкая тень для глубины */
+}
+
+.avatar-container {
+    display: flex;
+    align-items: center;
+}
+
+.forum-name h1 {
+    text-align: center;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    border: 2px solid #ffa500; /* Оранжевая рамка вокруг аватара */
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    margin: 0;
+    font-size: 1.5em; /* Увеличенный размер шрифта для имени */
+}
+
+.site-description {
+    margin: 5px 0 0;
+    font-size: 0.9em; /* Уменьшенный размер шрифта для описания */
+}
+
+nav {
+    background-color: #2a2a2a; /* Темный фон навигации */
+    padding: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-links li a {
+    color: #ffa500; /* Оранжевый цвет ссылок */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffd700; /* Более светлый оранжевый при наведении */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #1e1e1e; /* Темный фон секций */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.points p {
+    margin-top: 20px;
+    padding: 8px;
+    background-color: #121212;
+    border-radius: 8px;
+}
+
+.points {
+    text-align: center;
+    padding: 0px;
+}
+
+.points a {
+    text-decoration: none;
+    color: #0088cc;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.points a:hover {
+    color: #005f7f;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1f1f1f; /* Темный фон подвала */
+    color: #fff;
+    border-top: 1px solid #444; /* Легкая граница сверху */
+}
+
+/* Стили для анимации загрузки */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 18, 18, 1.0); /* Полупрозрачный темный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Чтобы загрузчик был поверх всего */
+}
+
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.1);
+    border-left-color: #ffa500; /* Цвет для анимации */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Стили для языков программирования */
+.language-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.language-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    color: #e0e0e0; /* Цвет текста для языков */
+}
+
+.language-logo {
+    width: 40px; /* Размер логотипа */
+    height: 40px; /* Размер логотипа */
+    margin-bottom: 5px; /* Отступ между логотипом и текстом */
+}
+
+  /* Основные стили для блока кода */
+.code-block {
+    background-color: #2e2e2e;
+    border-radius: 5px; /* Скругленные углы */
+    padding: 10px; /* Отступы внутри блока */
+    margin: 10px 0; /* Отступы сверху и снизу */
+    font-family: 'Courier New', Courier, monospace; /* Моноширинный шрифт */
+    overflow-x: auto; /* Горизонтальная прокрутка для длинных строк */
+    white-space: nowrap; /* Запрет на перенос строк */
+    font-size: 0.9em; /* Уменьшенный размер шрифта */
+}
+
+        /* Стили для команд */
+.code-command {
+    color: #569cd6; /* Цвет для команд */
+    font-weight: bold; /* Жирный шрифт для команд */
+}
+
+        /* Стили для описаний команд */
+.code-description {
+    color: #ce9178; /* Цвет для описаний команд */
+    font-style: italic; /* Курсив для описаний */
+}
+
+        /* Стили для кнопки копирования */
+.copy-button {
+    background-color: #007acc; /* Синий фон кнопки */
+    color: #ffffff; /* Белый цвет текста кнопки */
+    border: none; /* Без границы */
+    padding: 5px 8px; /* Отступы внутри кнопки */
+    border-radius: 12px; /* Скругленные углы */
+    cursor: pointer; /* Указатель курсора при наведении */
+    margin-left: 10px; /* Отступ слева */
+    font-size: 0.9em; /* Уменьшенный размер шрифта */
+}
+
+.copy-button:hover {
+    background-color: #005f99; /* Темнее при наведении */
+}
+
+.telegram-channels {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #121212;
+    border-radius: 8px;
+}
+.telegram-channel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.telegram-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.telegram-link {
+    text-decoration: none;
+    color: #0088cc;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.telegram-link:hover {
+    color: #005f7f;
+}
+
+.out {
+    text-align: center;
+    padding: 0px;
+}
+
+.out a {
+    text-decoration: none;
+    color: #0088cc;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.out a:hover {
+    color: #005f7f;
+}
+
+instructions {
+    margin: 10px 0;
+    padding: 0px;
+    background-color: #1e1e1e; /* Темный фон секций */
+    border-radius: 10px;
+}
+
+.text-instructions p {
+    margin-top: 20px;
+    padding: 8px;
+    background-color: #202020;
+    border-radius: 8px;
+}
+
+.text-instructions {
+    text-align: left;
+    padding: 0px;
+}
+
+.text-instructions a {
+    text-decoration: none;
+    color: #0088cc;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.text-instructions a:hover {
+    color: #005f7f;
+}

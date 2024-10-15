@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum-Veynamer'a</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="forum-name">
+            <h1>Форум</h1>
+        </div>
+    </header>
+
+    <main>
+        <instructions id="html">
+            <div class="text-instructions">
+                <h2>Инструкция по установке GSI, актуально для устройств на Unisoc.</h2>
+                <p>И так, сперва перед установкой GSI на вашем устройстве должен быть разблокирован загрузчик и должна быть поддержка Project Treble, моя инструкция актуальна для устройств с A/B разметкой и динамическими разделами. Скачиваем platform tools(все ссылки будут в конце), создаём папку в диске C: и распаковываем Platform Tools туда. заходим в эту папку, нажимаем в поле, где указан путь и пишем на английском cmd, нажимаем inter и вот, мы открыли терминал из необходимой для нас папки. но сперва надо ещё установить adb, fastboot драйвера, думаю это не составит вам труда, драйвера есть в интернете под любое устройство. скачиваем под свое устройство и устанавливаем, возможно сперва вам придется отключить проверку подписи драйвера. если это уже сделали берем устройство, включаем режим для разработчиков и заходим в этот пункт. Включаем отладку по ADB, подключаем устройство при помощи зарядного провода к компьютеру, в нашем окне терминала пишем следующее:</p>
+                <div class="code-block">
+                    <span class="code-command">adb devices</span>
+                    <button class="copy-button" onclick="copyToClipboard('adb devices')">копировать</button>
+                </div>
+                <p>На устройстве спросит, предоставить ли доступ по ADB, соглашаетесь. скачиваем gsi, какую хотите, только важно чтобы версия андроид не была ниже, чем стоит по стоку, выше можно. Распаковывем образ img из архива который вы скачали в папку с platform tools, перезагружаем устройство в fastbootd этой командой:</p>
+                <div class="code-block">
+                    <span class="code-command">adb reboot fastboot</span>
+                    <button class="copy-button" onclick="copyToClipboard('adb reboot fastboot')">копировать</button>
+                </div>
+                <p>Устройство загрузится в режим FastbootD, теперь пишем эту команду:
+                <div class="code-block">
+                    <span class="code-command">fastboot devices</span>
+                    <button class="copy-button" onclick="copyToClipboard('fastboot devices')">копировать</button>
+                </div>
+                <p>должно показать устройство, если всё показало делаем следующее:</p>
+                <div class="code-block">
+                    <span class="code-command">fastboot flash system «полное название с расширением вашего образа GSI»</span>
+                    <button class="copy-button" onclick="copyToClipboard('fastboot flash system «полное название с расширением вашего образа GSI»')">копировать</button>
+                </div>
+                <p>пишем это, но без кавычек, если показывает что не хватает памяти, то пишем:</p>
+                <div class="code-block">
+                    <span class="code-command">fastboot delete-logical-partition product_a</span>
+                    <button class="copy-button" onclick="copyToClipboard('fastboot delete-logical-partition product_a')">копировать</button>
+                </div>
+                <div class="code-block">
+                    <span class="code-command">fastboot delete-logical-partition product_b</span>
+                    <button class="copy-button" onclick="copyToClipboard('fastboot delete-logical-partition product_b')">копировать</button>
+                </div>
+                <p>и повторяем предыдущее действие.</p>
+                <p>Должен начаться процесс прошивки, после его завершения пишем:</p>
+                <div class="code-block">
+                    <span class="code-command">fastboot reboot recovery</span>
+                    <button class="copy-button" onclick="copyToClipboard('fastboot reboot recovery')">копировать</button>
+                </div>
+                <p>после выполнения этой команды мы попадаем в рекавери, ищем wipe data/factory reset, выбираем это и подтверждаем на очистку данных. Выбираем reboot system now.</p>
+                <p>Готово, теперь ваша система должна загрузится, вы сможете настроить устройство и использовать новую систему, поздравляю вас с установкой GSI!</p>
+            </div>
+        </instructions>
+        <out>
+            <div class="out">
+                <a href="forum.html">Назад</a>
+            </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Vladimir Panferov. Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
