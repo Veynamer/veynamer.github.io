@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Скрытие загрузчика после загрузки страницы
     const loader = document.getElementById('loader');
     window.addEventListener('load', () => {
         loader.style.display = 'none';
@@ -19,17 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
   async function copyToClipboard(text) {
       try {
-          // Создаем временный элемент для копирования текста
           const textarea = document.createElement('textarea');
           textarea.value = text;
           document.body.appendChild(textarea);
           textarea.select();
-          document.execCommand('copy'); // Используем execCommand для совместимости
-          document.body.removeChild(textarea); // Удаляем временный элемент
-          // Уведомление об успешном копировании
-          alert("Команда скопирована в буфер обмена!");
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+          alert("Команда скопирована в буфер обмена");
       } catch (err) {
-          // Если произошла ошибка, выводим сообщение
           alert("Не удалось скопировать команду.");
       }
   }

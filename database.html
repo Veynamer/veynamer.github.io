@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База данных</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="forum-name">
+            <h1>База данных</h1>
+        </div>
+    </header>
+
+    <main>
+        <section id="files">
+            <h2>список файлов</h2>
+            <ul id="file-list">Загрузка...</ul>
+        </section>
+
+        <out>
+            <div class="out">
+                <a href="index.html">Назад</a>
+            </div>
+        </out>
+    </main>
+
+    <footer>
+        <p>&copy; 2024-2025 Vladimir Panferov.</p>
+    </footer>
+
+    <script>
+        const owner = "Veynamer";
+        const repo = "veynamer.github.io";
+        const folder = "database";
+
+        async function fetchFiles() {
+            const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${folder}`);
+            const files = await response.json();
+
+            if (Array.isArray(files)) {
+                document.getElementById("file-list").innerHTML = files
+                    .map(file => `<li><a href="${file.download_url}" target="_blank">${file.name}</a></li>`)
+                    .join("");
+            } else {
+                document.getElementById("file-list").innerHTML = "Ошибка загрузки файлов.";
+            }
+        }
+
+        fetchFiles();
+    </script>
+</body>
+</html>
