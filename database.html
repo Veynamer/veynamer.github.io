@@ -35,14 +35,25 @@
         const repo = "veynamer.github.io";
         const folder = "database";
 
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + " B";
+            let k = 1024, i = Math.floor(Math.log(bytes) / Math.log(k));
+            let sizes = ["B", "KB", "MB", "GB", "TB"];
+            return (bytes / Math.pow(k, i)).toFixed(2) + " " + sizes[i];
+        }
+
         async function fetchFiles() {
             const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${folder}`);
             const files = await response.json();
 
             if (Array.isArray(files)) {
                 document.getElementById("file-list").innerHTML = files
-                    .map(file => `<li><a href="${file.download_url}" target="_blank">${file.name}</a></li>`)
-                    .join("");
+                    .map(file => `
+                        <li>
+                            <a href="${file.download_url}" target="_blank">${file.name}</a>
+                            <span class="file-size">(${formatFileSize(file.size)})</span>
+                        </li>
+                    `).join("");
             } else {
                 document.getElementById("file-list").innerHTML = "Ошибка загрузки файлов.";
             }
