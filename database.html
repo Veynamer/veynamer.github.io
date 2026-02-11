@@ -7,11 +7,39 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+	<div id="loader" class="loader">
+      <div class="spinner"></div>
+    </div>
     <header>
         <div class="forum-name">
             <h1>База данных</h1>
         </div>
     </header>
+	<aside id="sidebar" class="sidebar">
+  	  <div class="sidebar-header">
+     	   <img src="avatar.jpg" alt="Avatar" class="avatar">
+      	  <h3 class="sidebar-title">Меню</h3>
+    	</div>
+    	<nav>
+   	     <ul class="sidebar-links">
+         	   <li><a href="index.html">Главная</a></li>
+    	        <li><a href="#">О сайте</a></li>
+    	        <li><a href="#">Контакты</a></li>
+  	          <li><a href="#">Профиль</a></li>
+  	      </ul>
+ 	   </nav>
+		<div class="language-selector">
+		    <button id="language-button" class="language-button">язык</button>
+		    <div class="language-options">
+		        <a href="#" class="language-option">Русский</a>
+ 		       <a href="#" class="language-option">English</a>
+     		   <a href="#" class="language-option">Deutsch</a>
+ 		   </div>
+		</div>
+	</aside>
+
+	<!-- Кнопка для открытия меню -->
+	<button id="sidebar-toggle" class="sidebar-toggle">☰</button>
 
     <main>
         <section id="files">
@@ -30,36 +58,6 @@
         <p>&copy; 2024-2025 Vladimir Panferov.</p>
     </footer>
 
-    <script>
-        const owner = "Veynamer";
-        const repo = "veynamer.github.io";
-        const folder = "database";
-
-        function formatFileSize(bytes) {
-            if (bytes < 1024) return bytes + " B";
-            let k = 1024, i = Math.floor(Math.log(bytes) / Math.log(k));
-            let sizes = ["B", "KB", "MB", "GB", "TB"];
-            return (bytes / Math.pow(k, i)).toFixed(2) + " " + sizes[i];
-        }
-
-        async function fetchFiles() {
-            const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${folder}`);
-            const files = await response.json();
-
-            if (Array.isArray(files)) {
-                document.getElementById("file-list").innerHTML = files
-                    .map(file => `
-                        <li>
-                            <a href="${file.download_url}" target="_blank">${file.name}</a>
-                            <span class="file-size">(${formatFileSize(file.size)})</span>
-                        </li>
-                    `).join("");
-            } else {
-                document.getElementById("file-list").innerHTML = "Ошибка загрузки файлов.";
-            }
-        }
-
-        fetchFiles();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

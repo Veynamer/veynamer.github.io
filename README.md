@@ -1,2 +1,2 @@
-# Veynamer-home-site new
+# Veynamer-home-site
 My personal site 

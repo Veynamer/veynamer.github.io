@@ -10,22 +10,41 @@
     <div id="loader" class="loader">
       <div class="spinner"></div>
     </div>
+	<aside id="sidebar" class="sidebar">
+  	  <div class="sidebar-header">
+     	   <img src="avatar.jpg" alt="Avatar" class="avatar">
+      	  <h3 class="sidebar-title">Menu</h3>
+    	</div>
+    	<nav>
+   	     <ul class="sidebar-links">
+         	   <li><a href="index-en.html">Home</a></li>
+    	        <li><a href="#">Readme</a></li>
+				<li><a href="forum.html">Forum</a></li>
+				<li><a href="database.html">Personal DB</a></li>
+    	        <li><a href="#">Contacts</a></li>
+  	          <li><a href="#">Profile</a></li>
+  	      </ul>
+ 	   </nav>
+		<div class="language-selector">
+		    <button id="language-button" class="language-button">lang</button>
+		    <div class="language-options">
+		        <a href="index.html" class="language-option">🇷🇺Rus</a>
+ 		       <a href="index-en.html" class="language-option">🇬🇧Eng</a>
+     		   <a href="index-de.html" class="language-option">🇩🇪De</a>
+ 		   </div>
+		</div>
+	</aside>
+
+	<button id="sidebar-toggle" class="sidebar-toggle">☰</button>
     <header>
         <div class="avatar-container">
             <img src="avatar.jpg" alt="Аватарка" class="avatar">
             <div class="author-info">
-                <h1 class="author-name">Vladimir Panferov</h1>
+                <h1 class="author-name">Veyrith</h1>
                 <p class="site-description">Here you will find information about the author, links with useful content and more.</p>
             </div>
         </div>
     </header>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#forum">forum</a></li>
-            <li><a href="../service/services.html">baraholka</a></li>
-            <li><a href="#other">other</a></li>
-        </ul>
-    </nav>
     <main>
         <section id="forum">
             <div class="points">
@@ -34,50 +53,52 @@
                 <a href="forum.html">Click</a>
             </div>
         </section>
-        <section id="market">
-            <div class="points">
-                <h2>Baraholka</h2>
-                <p>Various files and links.</p>
-                <a href="../service/services.html">Click</a>
-            </div>
-        </section>
-        <section id="other">
-            <div class="points">
-                <h2>Other</h2>
-                <p>It's empty so far.</p>
-            </div>
-        </section>
         <section id="languages">
-            <h2>My Programming languages</h2>
-            <div class="language-list">
-                <div class="language-item">
-                    <img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" alt="JavaScript" class="language-logo">
-                    <p>JavaScript</p>
-                </div>
-                <div class="language-item">
-                    <img src="https://upload.vectorlogo.zone/logos/gnu_bash/images/66582b8e-a291-4a1b-b89c-76628277a33b.svg" alt="Bash" class="language-logo">
-                    <p>Bash</p>
-                </div>
-                <div class="language-item">
-                    <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg" alt="HTML5" class="language-logo">
-                    <p>Html5</p>
-                </div>
-                <div class="language-item">
-                    <img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-ar21.svg" alt="CSS" class="language-logo">
-                    <p>Css</p>
-                </div>
-            </div>
+            <h2>I use</h2>
+			<p align="left">
+			  <a href="https://git.io/typing-svg">
+			    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&pause=10000&color=ff4fa2&width=200&lines=Linux+Distro" alt="Typing SVG" />
+			  </a>
+			  <br/>
+			  <img src="https://img.shields.io/badge/Void_Linux-0A3D2D?style=for-the-badge&logo=voidlinux&logoColor=white" />
+			</p>
+			<p align="left">
+			  <a href="https://git.io/typing-svg">
+			    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&pause=10000&color=ff4fa2&width=200&lines=Soft/DE" alt="Typing SVG" />
+			  </a>
+			  <br/>
+			  <img src="https://img.shields.io/badge/Neovim-57A143?style=for-the-badge&logo=neovim&logoColor=white" />
+			  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+			  <img src="https://img.shields.io/badge/KDE-2F7DCA?style=for-the-badge&logo=kde&logoColor=white" />
+			  <img src="https://img.shields.io/badge/Kate-0098DC?style=for-the-badge&logo=kde&logoColor=white" />
+			  <img src="https://img.shields.io/badge/GIMP-526E54?style=for-the-badge&logo=gimp&logoColor=white" />
+			  <img src="https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white" />
+			</p>
         </section>
-        <section id="telegram-channels"> <!-- Раздел для Telegram каналов -->
+		<section id="github-widget">
+   		 <h2>GitHub Stats</h2>
+			<div id="github-info-container">
+  	  		<p><strong>User:</strong> <span id="github-username">loading...</span></p>
+ 			   <p><strong>People:</strong> <span id="github-followers">0</span></p>
+  			  <p><strong>Repositories:</strong> <span id="github-repos">0</span></p>
+ 			   <p><strong>Stars:</strong> <span id="github-stars">0</span></p>
+ 		 	  <p><strong>Commits:</strong> <span id="github-commits">0</span></p>
+  			  <p><strong>Last commit:</strong> <span id="github-last-commit">Not found</span></p>
+ 			   <p><strong>Open Issues:</strong> <span id="github-open-issues">0</span></p>
+			    <p><strong>Pull Requests:</strong> <span id="github-pull-requests">0</span></p>
+  			  <p><strong>Most popular repo:</strong> <span id="github-most-starred">unknown</span></p>
+			</div>
+		</section>
+        <section id="telegram-channels">
             <h2>My Telegram channels and chats</h2>
             <div class="telegram-channels">
                 <div class="telegram-channel">
                     <img src="https://www.vectorlogo.zone/logos/telegram/telegram-tile.svg" alt="Telegram" class="telegram-logo">
-                    <a href="https://t.me/veynamer_chanel" class="telegram-link">My personal channel</a>
+                    <a href="https://t.me/veynamer_chanel_porter" class="telegram-link">My personal channel</a>
                 </div>
                 <div class="telegram-channel">
                     <img src="https://www.vectorlogo.zone/logos/telegram/telegram-tile.svg" alt="Telegram" class="telegram-logo">
-                    <a href="https://t.me/infinix_unisoc_all_RUchat" class="telegram-link">infinix unisoc all RU chat</a>
+                    <a href="https://t.me/thoughts_veyrith_outloud" class="telegram-link">Personal Shitpost</a>
                 </div>
                 <div class="telegram-channel">
                     <img src="https://www.vectorlogo.zone/logos/telegram/telegram-tile.svg" alt="Telegram" class="telegram-logo">
@@ -87,10 +108,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Vladimir Panferov. All rights reserved.</p>
-        <div class="out">
-            <a href="index.html">Rus version</a>
-        </div>
+        <p>&copy; 2024-2026 Vladimir Panferov. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
 </body>

@@ -3,30 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veynamer-home-site</title>
+    <title>Veyrith-home-site</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="loader" class="loader">
       <div class="spinner"></div>
     </div>
+	<aside id="sidebar" class="sidebar">
+  	  <div class="sidebar-header">
+     	   <img src="avatar.jpg" alt="Avatar" class="avatar">
+      	  <h3 class="sidebar-title">Меню</h3>
+    	</div>
+    	<nav>
+   	     <ul class="sidebar-links">
+         	   <li><a href="index.html">Главная</a></li>
+    	        <li><a href="#">О сайте</a></li>
+				<li><a href="forum.html">Форум</a></li>
+				<li><a href="database.html">Личная БД</a></li>
+    	        <li><a href="#">Контакты</a></li>
+  	          <li><a href="#">Профиль</a></li>
+  	      </ul>
+ 	   </nav>
+		<div class="language-selector">
+		    <button id="language-button" class="language-button">язык</button>
+		    <div class="language-options">
+		        <a href="index.html" class="language-option">🇷🇺Rus</a>
+ 		       <a href="index-en.html" class="language-option">🇬🇧Eng</a>
+     		   <a href="index-de.html" class="language-option">🇩🇪De</a>
+ 		   </div>
+		</div>
+	</aside>
+
+	<button id="sidebar-toggle" class="sidebar-toggle">☰</button>
     <header>
         <div class="avatar-container">
-            <img src="avatar.jpg" alt="Аватар" class="avatar">
+            <img src="avatar.jpg" alt="avatar" class="avatar">
             <div class="author-info">
-                <h1 class="author-name">Vladimir Panferov</h1>
+                <h1 class="author-name">Veyrith</h1>
                 <p class="site-description">Здесь вы найдете базовые сведения о авторе, ссылки с полезным контентом и другое.</p>
-                <p class="site-description">I use arch btw</p>
             </div>
         </div>
     </header>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#forum">Лента</a></li>
-            <li><a href="#database">БД</a></li>
-            <li><a href="#other">Другое</a></li>
-        </ul>
-    </nav>
     <main>
         <section id="forum">
             <div class="points">
@@ -35,36 +53,42 @@
                 <a href="forum.html">тык</a>
             </div>
         </section>
-        <section id="database">
-            <div class="points">
-                <h2>Личная БД.</h2>
-                <p>Различные файлы и ссылки...</p>
-                <a href="database.html">тык</a>
-            </div>
-        </section>
-        <section id="other">
-            <div class="points">
-                <h2>Другое</h2>
-                <p>Пока что пусто.</p>
-            </div>
-        </section>
         <section id="languages">
-            <h2>Мои языки программирования</h2>
-            <div class="language-list">
-                <div class="language-item">
-                    <img src="Bash-Light.svg" alt="Bash" class="language-logo">
-                    <p>Bash</p>
-                </div>
-                <div class="language-item">
-                    <img src="HTML.svg" alt="HTML5" class="language-logo">
-                    <p>HTML5</p>
-                </div>
-                <div class="language-item">
-                    <img src="CSS.svg" alt="CSS" class="language-logo">
-                    <p>CSS</p>
-                </div>
-            </div>
+            <h2>Я использую</h2>
+			<p align="left">
+			  <a href="https://git.io/typing-svg">
+			    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&pause=10000&color=ff4fa2&width=200&lines=Дистрибутив" alt="Typing SVG" />
+			  </a>
+			  <br/>
+			  <img src="https://img.shields.io/badge/Void_Linux-0A3D2D?style=for-the-badge&logo=voidlinux&logoColor=white" />
+			</p>
+			<p align="left">
+			  <a href="https://git.io/typing-svg">
+			    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&pause=10000&color=ff4fa2&width=200&lines=Софт" alt="Typing SVG" />
+			  </a>
+			  <br/>
+			  <img src="https://img.shields.io/badge/Neovim-57A143?style=for-the-badge&logo=neovim&logoColor=white" />
+			  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+			  <img src="https://img.shields.io/badge/KDE-2F7DCA?style=for-the-badge&logo=kde&logoColor=white" />
+			  <img src="https://img.shields.io/badge/Kate-0098DC?style=for-the-badge&logo=kde&logoColor=white" />
+			  <img src="https://img.shields.io/badge/GIMP-526E54?style=for-the-badge&logo=gimp&logoColor=white" />
+			  <img src="https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=firefox&logoColor=white" />
+			</p>
         </section>
+		<section id="github-widget">
+   		 <h2>GitHub Статистика</h2>
+			<div id="github-info-container">
+  	  		<p><strong>Пользователь:</strong> <span id="github-username">Загружается...</span></p>
+ 			   <p><strong>Подписчики:</strong> <span id="github-followers">0</span></p>
+  			  <p><strong>Репозитории:</strong> <span id="github-repos">0</span></p>
+ 			   <p><strong>Звезды:</strong> <span id="github-stars">0</span></p>
+ 			   <p><strong>Коммиты:</strong> <span id="github-commits">0</span></p>
+  			  <p><strong>Последний коммит:</strong> <span id="github-last-commit">Не найден</span></p>
+ 			   <p><strong>Открытые Issues:</strong> <span id="github-open-issues">0</span></p>
+			    <p><strong>Pull Requests:</strong> <span id="github-pull-requests">0</span></p>
+  			  <p><strong>Самый популярный репозиторий:</strong> <span id="github-most-starred">Нет</span></p>
+			</div>
+		</section>
         <section id="telegram-channels">
             <h2>Мои Telegram каналы и чаты</h2>
             <div class="telegram-channels">
@@ -74,7 +98,7 @@
                 </div>
                 <div class="telegram-channel">
                     <img src="https://www.vectorlogo.zone/logos/telegram/telegram-tile.svg" alt="Telegram" class="telegram-logo">
-                    <a href="https://t.me/infinix_unisoc_all_RUchat" class="telegram-link">infinix unisoc all RU chat</a>
+                    <a href="https://t.me/thoughts_veyrith_outloud" class="telegram-link">Мой новый личный щитпост</a>
                 </div>
                 <div class="telegram-channel">
                     <img src="https://www.vectorlogo.zone/logos/telegram/telegram-tile.svg" alt="Telegram" class="telegram-logo">
@@ -84,10 +108,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2024-2025 Vladimir Panferov.</p>
-        <div class="out">
-            <a href="index-en.html">английский вариант</a>
-        </div>
+        <p>&copy; 2024-2026 Vladimir Panferov.</p>
     </footer>
     <script src="script.js"></script>
 </body>

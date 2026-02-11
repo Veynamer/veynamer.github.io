@@ -2,17 +2,70 @@ body {
     font-family: 'Rubik', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0f0f0f; /* Темный фон для AMOLED */
-    color: #e0e0e0; /* Светлый текст для контраста */
+    background-color: #080909; 
+    background-attachment: fixed;
+    color: #e0e0e0;
+    height: 100vh;
+    position: relative;
+	overflow: hidden;
+}
+
+body.loading::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(25px);
+    z-index: 60;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 30px;
+    padding-bottom: 8px;
+    background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
+    animation: l2 2s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: #aaa;
+    padding: 15px;
+    border-radius: 1px;
+}
+
+.loader:before {
+    content: "Loading...";
+	color: #aaa;
+	font-family: monospace;
+}
+
+@keyframes l2 {
+    to {
+        background-size: 100% 3px;
+    }
 }
 
 header {
-    background-color: #1f1f1f; /* Темный фон заголовка */
+    background-color: #242323;
     color: #fff;
     padding: 20px;
     display: flex;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Легкая тень для глубины */
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	z-index: 3;
+	position: relative;
+	
 }
 
 .avatar-container {
@@ -22,14 +75,17 @@ header {
 
 .forum-name h1 {
     text-align: center;
+    font-weight: 700;
+    color: #ff4444;
 }
 
 .avatar {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    border-radius: 50px;
+    width: 85px;
+    height: 85px;
     margin-right: 20px;
-    border: 2px solid #ff5100; /* Оранжевая рамка вокруг аватара */
+    border: 1px solid #ff4d7d;
+    box-shadow: 0 0 12px rgba(229, 57, 53, 0.4);
 }
 
 .author-info {
@@ -39,114 +95,66 @@ header {
 
 .author-name {
     margin: 0;
-    font-size: 1.5em; /* Увеличенный размер шрифта для имени */
+    font-size: 1.6em;
+    color: #963B52;
+	font-family: serif;
 }
 
 .site-description {
     margin: 5px 0 0;
-    font-size: 0.9em; /* Уменьшенный размер шрифта для описания */
-}
-
-nav {
-    background-color: #2a2a2a; /* Темный фон навигации */
-    padding: 10px;
-}
-
-.nav-links {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-.nav-links li a {
-    color: #ff8800; /* Оранжевый цвет ссылок */
-    text-decoration: none;
-    transition: color 0.3s,
- background-color 0.3s;
-    padding: 10px 30px;
-    background-color: #1e1e1e;
-    border-radius: 18px;   
-}
-
-.nav-links li a:hover {
-    color: #ffd700; /* Более светлый оранжевый при наведении */
-    background-color: #222222;
+    font-size: 1.12em;
+    color: #aaa;
+	font-family: monospace;
 }
 
 main {
-    padding: 20px;
+    padding: 10px;
 }
 
 section {
     margin: 20px 0;
-    padding: 15px;
-    background-color: #1e1e1e; /* Темный фон секций */
-    border-radius: 16px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    background-color: #242323;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+section h2 {
+	font-family: serif;
+	text-align: left;
 }
 
 .points p {
     margin-top: 20px;
     padding: 8px;
-    background-color: #121212;
-    border-radius: 8px;
+    background-color: #151515;
+    border-radius: 6px;
+	font-family: monospace;
+	text-align: left;
 }
 
 .points {
     text-align: center;
-    padding: 0px;
+	font-family: serif;
 }
 
 .points a {
     text-decoration: none;
-    color: #0088cc;
+    color: #AB4A63; 
     font-weight: bold;
-    transition: color 0.3s;
 }
-
 .points a:hover {
-    color: #005f7f;
+    color: #ff7777;
 }
 
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #1f1f1f; /* Темный фон подвала */
+    background: rgba(31, 31, 31, 0.8);
+    backdrop-filter: blur(8px);
     color: #fff;
-    border-top: 2px solid #444; /* Легкая граница сверху */
-}
-
-/* Стили для анимации загрузки */
-.loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(18, 18, 18, 1.0); /* Полупрозрачный темный фон */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Чтобы загрузчик был поверх всего */
-}
-
-.spinner {
-    border: 8px solid rgba(255, 255, 255, 0.1);
-    border-left-color: #ffa500; /* Цвет для анимации */
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .language-list {
@@ -164,56 +172,56 @@ footer {
 }
 
 .language-logo {
-    width: 40px; /* Размер логотипа */
-    height: 40px; /* Размер логотипа */
-    margin-bottom: 5px; /* Отступ между логотипом и текстом */
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
 }
 
-  /* Основные стили для блока кода */
 .code-block {
-    background-color: #2e2e2e;
-    border-radius: 5px; /* Скругленные углы */
-    padding: 10px; /* Отступы внутри блока */
-    margin: 10px 0; /* Отступы сверху и снизу */
-    font-family: 'Courier New', Courier, monospace; /* Моноширинный шрифт */
-    overflow-x: auto; /* Горизонтальная прокрутка для длинных строк */
-    white-space: nowrap; /* Запрет на перенос строк */
-    font-size: 0.9em; /* Уменьшенный размер шрифта */
+    background-color: #202020;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 10px 0;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.9em;
+    border-left: 3px solid #e53935;
 }
 
-        /* Стили для команд */
 .code-command {
-    color: #569cd6; /* Цвет для команд */
-    font-weight: bold; /* Жирный шрифт для команд */
+    color: #ff5252;
+    font-weight: bold;
 }
 
-        /* Стили для описаний команд */
 .code-description {
-    color: #ce9178; /* Цвет для описаний команд */
-    font-style: italic; /* Курсив для описаний */
+    color: #ffa07a;
+    font-style: italic;
 }
 
-        /* Стили для кнопки копирования */
 .copy-button {
-    background-color: #007acc; /* Синий фон кнопки */
-    color: #ffffff; /* Белый цвет текста кнопки */
-    border: none; /* Без границы */
-    padding: 5px 8px; /* Отступы внутри кнопки */
-    border-radius: 12px; /* Скругленные углы */
-    cursor: pointer; /* Указатель курсора при наведении */
-    margin-left: 10px; /* Отступ слева */
-    font-size: 0.9em; /* Уменьшенный размер шрифта */
+    background: linear-gradient(135deg, #e53935, #b71c1c);
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 5px rgba(229,57,53,0.3);
 }
-
 .copy-button:hover {
-    background-color: #005f99; /* Темнее при наведении */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(229,57,53,0.5);
 }
 
 .telegram-channels {
     margin-top: 20px;
     padding: 20px;
-    background-color: #121212;
-    border-radius: 8px;
+    background-color: #151515;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.05);
+	font-family: serif;
 }
 .telegram-channel {
     display: flex;
@@ -227,58 +235,52 @@ footer {
 }
 .telegram-link {
     text-decoration: none;
-    color: #0088cc;
+    color: #AB4A63;
     font-weight: bold;
-    transition: color 0.3s;
 }
 .telegram-link:hover {
-    color: #005f7f;
+    color: #CF6881;
 }
 
+/* Out */
 .out {
     text-align: center;
-    padding: 0px;
 }
-
 .out a {
     text-decoration: none;
-    color: #0088cc;
+    color: #ff3b3b;
     font-weight: bold;
-    transition: color 0.3s;
 }
-
 .out a:hover {
-    color: #005f7f;
+    color: #ff6666;
 }
 
 instructions {
     margin: 10px 0;
     padding: 0px;
-    background-color: #1e1e1e; /* Темный фон секций */
-    border-radius: 10px;
+    background-color: #1a1a1a;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
 .text-instructions p {
     margin-top: 20px;
     padding: 8px;
     background-color: #202020;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 .text-instructions {
     text-align: left;
-    padding: 0px;
 }
 
 .text-instructions a {
     text-decoration: none;
-    color: #0088cc;
+    color: #ff3b3b;
     font-weight: bold;
-    transition: color 0.3s;
 }
-
 .text-instructions a:hover {
-    color: #005f7f;
+    color: #ff6666;
 }
 
 #file-list {
@@ -289,31 +291,224 @@ instructions {
 #file-list li {
     display: flex;
     justify-content: space-between;
-    padding: 1px;
-    background-color: #1e1e1e;
+    padding: 4px;
+    background-color: #1a1a1a;
     margin: 5px 0;
-    border-radius: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
 #file-list li a {
-    color: #0088cc;
+    color: #ff4d4d;
     text-align: center;
     text-decoration: underline;
     font-size: 0.9em;
     word-break: break-all;
-    transition: color 0.2s;
-    transition: font-size 0.2s;
 }
-
 #file-list li a:hover {
-    color: #00a5f8;
-    text-align: center;
+    color: #ff6666;
     text-decoration: none;
     font-size: 0.91em;
 }
 
 #file-list li .file-size {
-    color: #cc8500;
+    color: #ff9800;
     font-size: 0.9em;
     margin-left: 10px;
+}
+ 
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -290px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(36, 35, 35, 0.8);
+	backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 39;
+}
+
+.sidebar-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(171, 74, 99, 0.4);
+	backdrop-filter: blur(3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 40;
+}
+
+.sidebar-toggle:active {
+    transform: scale(0.90);
+    animation: button-press 0.4s ease-in-out;
+}
+
+@keyframes button-press {
+    0% {
+        transform: scale(0.90);
+    }
+	25% {
+		transform: scale(0.95);
+	}
+    50% {
+        transform: scale(1.1);
+    }
+	75% {
+		transform: scale(1.05);
+	}
+    100% {
+        transform: scale(1);
+    }
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar .sidebar-header {
+	font-family: serif;
+	font-weight: bold;
+}
+
+.sidebar .sidebar-links {
+    list-style: none;
+	font-family: serif;
+    padding: 5;
+	background-color: rgba(20, 20, 20, 0.5);
+    border-radius: 10px;
+    padding: 15px 10px;
+    transition: background-color 0.3s ease;
+	box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-links li {
+    margin: 15px 0;
+}
+
+.sidebar-links li a {
+    color: #fff;
+	text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+	background-color: rgba(36, 36, 36, 0.7);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-links li a:hover {
+    background-color: #AB4A63;
+}
+
+.sidebar-links li a:active {
+    transform: scale(0.90);
+    animation: button-press 0.4s ease-in-out;
+}
+
+.main-content {
+    transition: margin-right 0.3s ease;
+    margin-right: 0;
+}
+
+.sidebar.open ~ .main-content {
+    margin-right: 250px;
+}
+
+.language-selector {
+    position: absolute;
+    bottom: 58px;
+    left: 90%;
+    transform: translateX(-90%);
+    width: auto;
+    text-align: center;
+}
+
+.language-button {
+    background-color: #AB4A63;
+	box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    display: inline-block;
+    position: relative;
+	font-family: serif;
+}
+
+.language-button:hover {
+    background-color: #D06478;
+}
+
+.language-button:active {
+    transform: scale(0.90);
+    animation: button-press 0.4s ease-in-out;
+}
+
+.language-options {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: -170px;
+    width: 140px;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 6px;
+	padding: 5;
+    padding: 10px 10px;
+    text-align: center;
+    z-index: 100;
+	opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+	box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4);
+	font-family: serif;
+	font-weight: bold;
+}
+
+.language-option {
+    color: #fff;
+	font-size: 0.9em;
+    text-decoration: none;
+	background-color: rgba(36, 36, 36, 0.7);
+    display: block;
+    padding: 10px;
+	border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.language-option:hover {
+    background-color: #444;
+}
+
+.language-option:active {
+    transform: scale(0.90);
+    animation: button-press 0.4s ease-in-out;
+}
+
+.language-selector.open .language-options {
+    display: block;
+}
+
+#github-info-container {
+    font-size: 1.1em;
+	text-align: left;
+	font-family: monospace;
+	margin-top: 20px;
+    padding: 8px;
+    background-color: #151515;
+    border-radius: 6px;
 }

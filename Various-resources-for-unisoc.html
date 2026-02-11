@@ -7,11 +7,39 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+	<div id="loader" class="loader">
+      <div class="spinner"></div>
+    </div>
     <header>
         <div class="forum-name">
             <h1>Форум</h1>
         </div>
     </header>
+	<aside id="sidebar" class="sidebar">
+  	  <div class="sidebar-header">
+     	   <img src="avatar.jpg" alt="Avatar" class="avatar">
+      	  <h3 class="sidebar-title">Меню</h3>
+    	</div>
+    	<nav>
+   	     <ul class="sidebar-links">
+         	   <li><a href="index.html">Главная</a></li>
+    	        <li><a href="#">О сайте</a></li>
+    	        <li><a href="#">Контакты</a></li>
+  	          <li><a href="#">Профиль</a></li>
+  	      </ul>
+ 	   </nav>
+		<div class="language-selector">
+		    <button id="language-button" class="language-button">язык</button>
+		    <div class="language-options">
+		        <a href="#" class="language-option">Русский</a>
+ 		       <a href="#" class="language-option">English</a>
+     		   <a href="#" class="language-option">Deutsch</a>
+ 		   </div>
+		</div>
+	</aside>
+
+	<!-- Кнопка для открытия меню -->
+	<button id="sidebar-toggle" class="sidebar-toggle">☰</button>
 
     <main>
         <instructions id="html">
