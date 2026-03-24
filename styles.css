@@ -329,6 +329,7 @@ instructions {
     padding: 20px;
     transition: right 0.3s ease;
     z-index: 39;
+    min-height: 100vh;
 }
 
 .sidebar-toggle {
@@ -365,6 +366,21 @@ instructions {
 	75% {
 		transform: scale(1.05);
 	}
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes button-select {
+    0% {
+        transform: scale(1.01);
+    }
+    25% {
+        transform: scale(1.02)
+    }
+    50% {
+        transform: scale(1.01);
+    }
     100% {
         transform: scale(1);
     }
@@ -409,6 +425,9 @@ instructions {
 
 .sidebar-links li a:hover {
     background-color: #AB4A63;
+	transform: scale(1.03);
+    transition: background-color 0.3s ease;
+//    animation: button-select 0.4s ease-in-out;
 }
 
 .sidebar-links li a:active {
@@ -452,6 +471,9 @@ instructions {
 
 .language-button:hover {
     background-color: #D06478;
+	transform: scale(1.03);
+    transition: background-color 0.3s ease;
+//    animation: button-select 0.4s ease-in-out;
 }
 
 .language-button:active {
@@ -492,6 +514,9 @@ instructions {
 
 .language-option:hover {
     background-color: #444;
+	transform: scale(1.03);
+    transition: background-color 0.3s ease;
+//    animation: button-select 0.4s ease-in-out;
 }
 
 .language-option:active {
